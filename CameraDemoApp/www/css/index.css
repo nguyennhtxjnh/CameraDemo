@@ -97,6 +97,9 @@ h1 {
 }*/
 
 body {
-    color: #b6ff00;
-    background-color:aliceblue;
-}
+    color: #b6ff00;  
+} 
+img{
+		height: 10px;                  
+		width: 10px;  
+	}
