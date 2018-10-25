@@ -19,7 +19,15 @@
                 var lastPhotoContainer = document.getElementById("lastPhoto");
                 alert("looking good");
                 lastPhotoContainer.innerHTML = "<img src='" + imgURI + "' stype='width:300px; height:300px;'/>"
-            }, null, null);
+            }, null, { quality : 75,
+  destinationType : Camera.DestinationType.DATA_URL,
+  sourceType : Camera.PictureSourceType.CAMERA,
+  allowEdit : true,
+  encodingType: Camera.EncodingType.JPEG,
+  targetWidth: 100,
+  targetHeight: 100,
+  popoverOptions: CameraPopoverOptions,
+  saveToPhotoAlbum: true });
 
         };
 
