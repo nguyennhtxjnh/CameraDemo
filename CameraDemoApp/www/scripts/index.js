@@ -14,31 +14,25 @@
         
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
 
-        document.getElementById("btnTakePhoto").onclick = function () {
-            navigator.camera.getPicture(function (imgURI) {
-                var lastPhotoContainer = document.getElementById("lastPhoto");
-                alert("looking good");
-                lastPhotoContainer.src = imgURI;
-            },  function cameraError(error) {
-        console.debug("Unable to obtain picture: " + error, "app");
-
-    },function setOptions(srcType) {
-    var options = {
+		 var options = {
         // Some common settings are 20, 50, and 100
         quality: 50,
         destinationType: Camera.DestinationType.FILE_URI,
         // In this app, dynamically set the picture source, Camera or photo gallery
-        sourceType: srcType,
         encodingType: Camera.EncodingType.JPEG,
         mediaType: Camera.MediaType.PICTURE,
         allowEdit: true,
         correctOrientation: true  //Corrects Android orientation quirks
     }
-    return options;
-}
-);
+        document.getElementById("btnTakePhoto").onclick = function () {
+            navigator.camera.getPicture(function (imgURI) {
+                var lastPhotoContainer = document.getElementById("lastPhoto");
+                alert("looking good");
+                lastPhotoContainer.src = imgURI;
+		},  null,options    
+		);};
 
-        };
+        
 
         var parentElement = document.getElementById('deviceready');
         var listeningElement = parentElement.querySelector('.listening');
