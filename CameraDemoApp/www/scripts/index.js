@@ -18,8 +18,8 @@
             navigator.camera.getPicture(function (imgURI) {
                 var lastPhotoContainer = document.getElementById("lastPhoto");
                 alert("looking good");
-                lastPhotoContainer.innerHTML = "<img src='" + imgURI + "' stype='width:300px; height:300px;'/>"
-            }, null,function { quality : 75,
+                lastPhotoContainer.innerHTML = "<img src='" + imgURI + "'/>"
+            }, null,function(imgURI) { quality : 75,
 								destinationType : Camera.DestinationType.DATA_URL,
 								sourceType : Camera.PictureSourceType.CAMERA,
 								allowEdit : true,
